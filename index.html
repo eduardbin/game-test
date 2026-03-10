@@ -53,12 +53,12 @@
         const select = document.getElementById('gameSelect');
 
         const disableLayout = () => {
-            body.disabled = true;
+            body.style.pointerEvents = 'none';
             body.style.opacity = '.5';
         }
 
         const enableLayout = () => {
-            body.disabled = false;
+            body.style.pointerEvents = '';
             body.style.opacity = '';
         }
 
@@ -90,9 +90,12 @@
             .catch(err => console.error(err));
 
         select.addEventListener('change', async () => {
+            const id = select.value;
+
+            if (!id) return;
+            
             disableLayout();
 
-            const id = select.value;
             const gameData = Object.entries(data[id]);
 
             gameData.forEach(currentData => {
