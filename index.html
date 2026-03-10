@@ -43,9 +43,6 @@
 
     <h3>Макс игроков:</h3>
     <p class="data-coop"></p>
-
-    <h3>Актуальная цена:</h3>
-    <p class="data-price"></p>
 </div>
 
 <script>
@@ -97,11 +94,6 @@
 
             const id = select.value;
             const gameData = Object.entries(data[id]);
-            const steamData = await fetch(`https://store.steampowered.com/api/appdetails?appids=${id}&cc=ua&l=ru`)
-                .then(response => {
-                    if (!response.ok) throw new Error('Не удалось загрузить steamData');
-                    return response.json()[id];
-                }).catch(err => console.error(err));
 
             gameData.forEach(currentData => {
                 const node = document.querySelector('.data-' + currentData[0]);
@@ -112,11 +104,6 @@
                     if (currentData[0] == 'steamUrl') node.href = currentData[1];
                 }
             });
-
-            if (steamData) {
-                document.querySelector('.data-description').innerText = steamData.short_description;
-                document.querySelector('.data-price').innerText = steamData.price_overview.final_formatted;
-            }
 
             enableLayout();
         });
