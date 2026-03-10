@@ -160,5 +160,77 @@
     "description": "Возглавь средневековый ресторан в команде с такими же крысами, как и ты! Готовьте еду, бросайте её в гостей, вытирайте напитки из-под скелетов! Стань легендарной поварской крысой, доказав оркам и вампирам, что самое вкусное мясо с кровью подают в вашем ресторане!",
     "steamUrl": "https://store.steampowered.com/app/2870920/Restaurats/",
     "coop": 4
+  },
+  "699130": {
+    "game": "World War Z: Aftermath",
+    "description": "Кооперативный шутер про зомби с огромными ордами заражённых, где команда игроков проходит миссии по всему миру.",
+    "steamUrl": "https://store.steampowered.com/app/699130/World_War_Z_Aftermath/",
+    "coop": 4
+  },
+  "924970": {
+    "game": "Back 4 Blood",
+    "description": "Кооперативный зомби-шутер от создателей Left 4 Dead, где команда игроков сражается с заражёнными и проходит кампании.",
+    "steamUrl": "https://store.steampowered.com/app/924970/Back_4_Blood/",
+    "coop": 4
+  },
+  "322330": {
+    "game": "Don't Starve Together",
+    "description": "Кооперативная выживалка в мрачном мультяшном мире, где игроки собирают ресурсы, строят базу и пытаются пережить опасную ночь.",
+    "steamUrl": "https://store.steampowered.com/app/322330/Dont_Starve_Together/",
+    "coop": 6
+  },
+  "475150": {
+    "game": "Titan Quest Anniversary Edition",
+    "description": "Изометрическая action-RPG в античном мире мифологии, где игроки сражаются с мифическими существами и собирают лут.",
+    "steamUrl": "https://store.steampowered.com/app/475150/Titan_Quest_Anniversary_Edition/",
+    "coop": 6
+  },
+  "1144200": {
+    "game": "Ready or Not",
+    "description": "Тактический кооперативный шутер про спецназ, где команда планирует операции и штурмует здания.",
+    "steamUrl": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+    "coop": 5
+  },
+  "493520": {
+    "game": "GTFO",
+    "description": "Хардкорный кооперативный хоррор-шутер, где команда исследует подземный комплекс и сражается с монстрами.",
+    "steamUrl": "https://store.steampowered.com/app/493520/GTFO/",
+    "coop": 4
+  },
+  "108600": {
+    "game": "Project Zomboid",
+    "description": "Хардкорная изометрическая выживалка про зомби-апокалипсис с глубокими механиками выживания.",
+    "steamUrl": "https://store.steampowered.com/app/108600/Project_Zomboid/",
+    "coop": 16
+  },
+  "394510": {
+    "game": "HELLDIVERS",
+    "description": "Кооперативный top-down шутер, где игроки выполняют миссии за Супер-Землю и сражаются с инопланетными расами.",
+    "steamUrl": "https://store.steampowered.com/app/394510/HELLDIVERS_Dive_Harder_Edition/",
+    "coop": 4
+  },
+  "228280": {
+    "game": "Baldur's Gate: Enhanced Edition",
+    "description": "Классическое приключение возвращается! Издание Baldur’s Gate: Enhanced Edition – это оригинальные приключения во Вратах Балдура",
+    "steamUrl": "https://store.steampowered.com/app/228280/Baldurs_Gate_Enhanced_Edition/",
+    "coop": 4
+  },
+  "1097150": {
+    "game": "Fall Guys",
+    "description": "Мультиплеерная аркада-баттл-рояль с забавными испытаниями и препятствиями.",
+    "steamUrl": "https://store.steampowered.com/app/1097150/Fall_Guys/",
+    "coop": 60
+  },
+  "359550": {
+    "game": "Tom Clancy's Rainbow Six Siege",
+    "description": "Тактический командный шутер с разрушением окружения и напряжёнными матчами между атакующими и защитниками.",
+    "steamUrl": "https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/",
+    "coop": 5
+  },
+  "2536520": {
+    "game": "Diablo",
+    "description": "Классика экшен-RPG в жанре мрачного фэнтези",
+    "steamUrl": "https://store.steampowered.com/app/2536520/Diablo_II_Resurrected__izdanie_Infernal/",
+    "coop": "8/4"
   }
 }
