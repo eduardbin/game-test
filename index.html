@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Описание игр</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 400px;
+        }
+
+        select, button {
+            padding: 8px;
+            margin-top: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<h1>Выберите вариант</h1>
+<form action="#" method="post">
+    <label for="gameSelect">Игра:</label>
+    <select id="gameSelect" name="game">
+        <option value=""></option>
+    </select>
+</form>
+
+<div class="data">
+    <h3>Игра:</h3>
+    <p class="data-game"></p>
+
+    <h3>Описание:</h3>
+    <p class="data-description"></p>
+
+    <h3>Steam:</h3>
+    <p><a href="#" class="data-steamUrl" target="_blank"></a></p>
+
+    <h3>Макс игроков:</h3>
+    <p class="data-coop"></p>
+
+    <h3>Актуальная цена:</h3>
+    <p class="data-price"></p>
+</div>
+
+<script>
+    'use strict';
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        const body = document.querySelector('body');
+        const select = document.getElementById('gameSelect');
+
+        const disableLayout = () => {
+            body.disabled = true;
+            body.style.opacity = '.5';
+        }
+
+        const enableLayout = () => {
+            body.disabled = false;
+            body.style.opacity = '';
+        }
+
+        disableLayout();
+        const data = await fetch('data.json')
+            .then(response => {
+                if (!response.ok) throw new Error('Не удалось загрузить data.json');
+                return response.json();
+            })
+            .then(data => {
+                const gamesArray = Object.entries(data).map(([steamAppId, gameData]) => {
+                    return {
+                        steamAppId: Number(steamAppId),
+                        game: gameData.game,
+                    };
+                });
+
+                gamesArray.sort((a, b) => a.game.localeCompare(b.game));
+                gamesArray.forEach((i) => {
+                    const option = document.createElement('option');
+                    option.value = i.steamAppId;
+                    option.textContent = i.game;
+                    select.appendChild(option);
+                });
+
+                enableLayout();
+                return data;
+            })
+            .catch(err => console.error(err));
+
+        select.addEventListener('change', async () => {
+            disableLayout();
+
+            const id = select.value;
+            const gameData = Object.entries(data[id]);
+            const steamData = await fetch(`https://store.steampowered.com/api/appdetails?appids=${id}&cc=ua&l=ru`)
+                .then(response => {
+                    if (!response.ok) throw new Error('Не удалось загрузить steamData');
+                    return response.json()[id];
+                }).catch(err => console.error(err));
+
+            gameData.forEach(currentData => {
+                const node = document.querySelector('.data-' + currentData[0]);
+
+                if (node) {
+                    node.textContent = currentData[1];
+
+                    if (currentData[0] == 'steamUrl') node.href = currentData[1];
+                }
+            });
+
+            if (steamData) {
+                document.querySelector('.data-description').innerText = steamData.short_description;
+                document.querySelector('.data-price').innerText = steamData.price_overview.final_formatted;
+            }
+
+            enableLayout();
+        });
+    });
+</script>
+</body>
+</html>
